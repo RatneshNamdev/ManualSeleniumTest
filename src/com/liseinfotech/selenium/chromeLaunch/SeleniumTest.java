@@ -7,16 +7,21 @@ public class SeleniumTest {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","/Users/aaa/Downloads/chromedriver");
 
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver=new ChromeDriver(); //Launching the chrome browser
 
-        driver.get("http://yahoo.com");
+        driver.get("http://yahoo.com"); //enter url
+        String title=driver.getTitle(); //get title
 
-        System.out.println(driver.getTitle());
+        System.out.println(title);
 
-        driver.quit();
+        //Validation point in terms of title (Actual Vs. Expected one...)
+        if(title.equals("Yahoo Search - Web Search")){
+            System.out.println("Here is Correct title.....");
+        }else{
+            System.out.println("Here is Incorrect title.....");
+        }
 
-        System.out.println("Here is RATNESH NAMDVE.....");
-
+        //        driver.quit();  //quit the browser...
 
     }
 }
